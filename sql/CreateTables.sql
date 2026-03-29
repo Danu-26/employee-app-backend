@@ -3,8 +3,7 @@ GO
 
 CREATE TABLE Departments
 (
-    DepartmentId INT PRIMARY KEY IDENTITY(1,1),
-    DepartmentCode NVARCHAR(10) NOT NULL,
+    DepartmentCode NVARCHAR(10) PRIMARY KEY,
     DepartmentName NVARCHAR(100) NOT NULL
 );
 GO
@@ -18,7 +17,7 @@ CREATE TABLE Employees
     DateOfBirth DATE NOT NULL,
     Age INT NOT NULL,
     Salary DECIMAL(18,2) NOT NULL,
-    DepartmentId INT NOT NULL,
-    FOREIGN KEY (DepartmentId) REFERENCES Departments(DepartmentId)
+    DepartmentCode NVARCHAR(10) NOT NULL,
+    FOREIGN KEY (DepartmentCode) REFERENCES Departments(DepartmentCode)
 );
 GO
