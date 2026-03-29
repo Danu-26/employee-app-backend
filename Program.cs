@@ -7,7 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<DepartmentRepository>(); 
+builder.Services.AddScoped<DepartmentRepository>();
+builder.Services.AddScoped<EmployeeRepository>();
 
 var app = builder.Build();
 
